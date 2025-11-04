@@ -1,0 +1,18 @@
+<header class="app-header">
+  <div class="header-spacer"></div>
+  
+  <div class="header-center">
+    <img src="logo.png" alt="Logo" class="logo">
+  </div>
+  
+  <div class="header-right">
+    <div class="logged-in-section" *ngIf="isLoggedIn">
+      <button class="btn-peach logout-btn" (click)="logout()">התנתק</button>
+    </div>
+    
+    <div class="nav-buttons" *ngIf="!isLoggedIn">
+      <button class="btn-peach" (click)="goToLogin()">התחברות</button>
+      <button class="btn-peach" (click)="goToRegister()">הרשמה</button>
+    </div>
+  </div>
+</header>

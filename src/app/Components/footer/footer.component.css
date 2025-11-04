@@ -1,0 +1,55 @@
+.app-footer {
+  background-color: var(--header-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 20px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-text {
+  margin: 0;
+  color: var(--card-text);
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--btn-primary);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  transition: background-color 0.2s;
+}
+
+.github-link:hover {
+  background-color: var(--btn-secondary);
+  text-decoration: none;
+}
+
+.github-icon {
+  font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-text {
+    font-size: 0.8em;
+    gap: 6px;
+  }
+}

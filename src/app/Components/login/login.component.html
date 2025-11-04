@@ -1,0 +1,53 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>התחברות</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">שם משתמש:</label>
+        <input 
+          type="text" 
+          id="username" 
+          formControlName="Username"
+          autocomplete="username"
+          [class.error]="username?.invalid && username?.touched">
+        <div *ngIf="username?.invalid && username?.touched" class="error-message">
+          <span *ngIf="username?.errors?.['required']">שם משתמש נדרש</span>
+          <span *ngIf="username?.errors?.['minlength']">שם משתמש חייב להכיל לפחות 3 תווים</span>
+          <span *ngIf="username?.errors?.['maxlength']">שם משתמש לא יכול להכיל יותר מ-50 תווים</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">סיסמה:</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="Password"
+          autocomplete="current-password"
+          [class.error]="password?.invalid && password?.touched">
+        <div *ngIf="password?.invalid && password?.touched" class="error-message">
+          <span *ngIf="password?.errors?.['required']">סיסמה נדרשת</span>
+          <span *ngIf="password?.errors?.['minlength']">סיסמה חייבת להכיל לפחות 6 תווים</span>
+          <span *ngIf="password?.errors?.['maxlength']">סיסמה לא יכולה להכיל יותר מ-100 תווים</span>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <button 
+        type="submit" 
+        [disabled]="loginForm.invalid || isLoading"
+        class="login-btn">
+        <span *ngIf="!isLoading">התחבר</span>
+        <span *ngIf="isLoading">מתחבר...</span>
+      </button>
+    </form>
+
+    <div class="register-link">
+      <p>אין לך חשבון? <a routerLink="/register">הירשם כאן</a></p>
+    </div>
+  </div>
+</div>

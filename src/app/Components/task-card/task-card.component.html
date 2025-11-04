@@ -1,0 +1,15 @@
+<div class="task-card" (click)="onTaskClick()" [class.completed]="task.isCompleted" [appHighlightPriority]="task.priority || 'Low'">
+  <div class="task-header">
+    <h3>{{ task.title }}</h3>
+    <div class="header-right">
+      <span class="category-tag" [style.background-color]="(task.category | categoryStyle).backgroundColor">
+        {{ (task.category | categoryStyle).icon }} {{ (task.category | categoryStyle).name }}
+      </span>
+      <span class="status" [class.completed]="task.isCompleted" [class.in-progress]="!task.isCompleted">
+        {{ task.isCompleted ? '✓ הושלמה' : 'בתהליך' }}
+      </span>
+    </div>
+  </div>
+  
+  <p class="task-description">{{ task.description }}</p>
+</div>

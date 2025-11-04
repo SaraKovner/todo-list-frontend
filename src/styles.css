@@ -1,1 +1,204 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --bg-main: #F7F7F7;
+  --card-bg: #FFFFFF;
+  --card-text: #1F1F1F;
+  --text-secondary: #555;
+  --btn-primary: #5A5A5A;
+  --btn-secondary: #6C6C6C;
+  --border-color: #E0E0E0;
+  --header-bg: #EDEDED;
+  --success-color: #6F9D6F;
+  --warning-color: #C9A34F;
+  --error-color: #C94F4F;
+  --form-bg: #FFFFFF;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: "Assistant", sans-serif;
+  margin: 0;
+  padding: 70px 0 0 0;
+  color: var(--card-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--card-text);
+}
+
+
+
+/* Category Tags */
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.category-work {
+  background-color: #A44A1D;
+  color: white;
+}
+
+.category-personal {
+  background-color: #84C6C0;
+  color: var(--card-text);
+}
+
+.category-study {
+  background-color: #FFD873;
+  color: var(--card-text);
+}
+
+.category-health {
+  background-color: #F9C8B1;
+  color: var(--card-text);
+}
+
+.category-shopping {
+  background-color: #FAF8E9;
+  color: var(--card-text);
+  border: 1px solid #A44A1D;
+}
+
+.category-default {
+  background-color: #ddd;
+  color: var(--card-text);
+}
+
+/* Priority Directive Styles */
+.priority-high {
+  border-left: 5px solid var(--error-color) !important;
+}
+
+.priority-medium {
+  border-left: 5px solid #FCE24E !important;
+}
+
+.priority-low {
+  border-left: 5px solid var(--success-color) !important;
+}
+
+/* Global Button Styles */
+.btn-primary,
+.login-btn,
+.register-btn,
+button {
+  background-color: var(--btn-primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  transition: background-color 0.2s !important;
+}
+
+.btn-primary:hover,
+.login-btn:hover,
+.register-btn:hover,
+button:hover {
+  background-color: var(--btn-secondary);
+}
+
+.btn-primary:disabled,
+.login-btn:disabled,
+.register-btn:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Small buttons */
+.btn-add-category,
+.btn-save-category {
+  padding: 6px 12px !important;
+  font-size: 0.8em !important;
+}
+
+/* Status Tags */
+.status {
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 0.9em !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+
+.status.in-progress {
+  background-color: #7BA7BC !important;
+}
+
+.status.completed {
+  background-color: #A9B9A3 !important;
+}
+
+/* Global Form Styles */
+.form-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--card-text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--bg-main);
+  color: var(--card-text);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--btn-primary);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

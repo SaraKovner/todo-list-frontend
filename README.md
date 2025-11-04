@@ -1,59 +1,143 @@
-# Res
+# Todo List Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+🎓 **Academic Project** - A modern task management application built with Angular
 
-## Development server
+## 📋 About
 
-To start a local development server, run:
+This is a comprehensive Todo List application developed as part of an academic project. The application demonstrates modern web development practices using Angular framework with a .NET backend.
 
+## ✨ Features
+
+- 🔐 **User Authentication** - Login and registration system
+- 📝 **Task Management** - Create, read, update, and delete tasks
+- 🏷️ **Categories** - Organize tasks with custom categories and colors
+- ⚡ **Priority Levels** - Set task priorities (High, Medium, Low)
+- 📱 **Responsive Design** - Works on desktop and mobile devices
+- 🎨 **Modern UI** - Clean and intuitive user interface
+
+## 🛠️ Technologies Used
+
+- **Frontend**: Angular 19.2.5
+- **Styling**: CSS3 with custom design system
+- **Authentication**: JWT tokens
+- **HTTP Client**: Angular HttpClient
+- **Routing**: Angular Router with guards
+- **Forms**: Reactive Forms with validation
+
+## 🏗️ Architecture
+
+- **Components**: Modular, reusable UI components
+- **Services**: Centralized business logic and API communication
+- **Guards**: Route protection for authenticated users
+- **Pipes**: Custom data transformation (category styling)
+- **Directives**: Custom UI behavior (priority highlighting)
+- **Models**: TypeScript interfaces for type safety
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Angular CLI
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/saraKovner/todo-list-frontend.git
+cd todo-list-frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200/`
 
-## Code scaffolding
+### Backend Setup
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This frontend requires a .NET backend API. Make sure to:
+1. Start the backend server on `https://localhost:7087`
+2. Update the API URL in `proxy.conf.json` if needed
 
-```bash
-ng generate component component-name
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── Components/          # UI Components
+│   │   ├── header/         # Navigation header
+│   │   ├── footer/         # Footer with copyright
+│   │   ├── login/          # Authentication
+│   │   ├── task-list/      # Task listing
+│   │   ├── task-detail/    # Task details
+│   │   └── task-create/    # Task creation/editing
+│   ├── Services/           # Business logic
+│   │   ├── auth.service.ts # Authentication
+│   │   └── task.service.ts # Task management
+│   ├── Models/             # TypeScript interfaces
+│   ├── guards/             # Route protection
+│   ├── pipes/              # Custom pipes
+│   └── directives/         # Custom directives
+└── styles.css              # Global styles
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🎨 Design System
 
+- **Color Palette**: Neutral grays with accent colors
+- **Typography**: Assistant font family
+- **Components**: Consistent button styles and form elements
+- **Responsive**: Mobile-first approach
+
+## 🔧 Development
+
+### Build for Production
 ```bash
-ng generate --help
+ng build --prod
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Run Tests
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### Code Linting
 ```bash
-ng e2e
+ng lint
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📝 API Integration
 
-## Additional Resources
+The application integrates with a .NET Web API that provides:
+- User authentication endpoints
+- CRUD operations for tasks
+- Category management
+- JWT token validation
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🎓 Academic Context
+
+This project was developed as part of an academic curriculum to demonstrate:
+- Modern web development practices
+- Angular framework proficiency
+- RESTful API integration
+- User interface design
+- Authentication and authorization
+- Responsive web design
+
+## 📄 License
+
+© 2025 All rights reserved. This project is for educational purposes only.
+
+## 🤝 Contributing
+
+This is an academic project. For questions or suggestions, please contact the repository owner.
+
+---
+
+**Built with ❤️ using Angular & .NET**

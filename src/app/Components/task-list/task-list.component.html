@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header-section">
+    <h2>המשימות שלי</h2>
+    <button class="btn-peach" (click)="createTask()">הוסף משימה +</button>
+  </div>
+  
+  <div *ngIf="isLoading" class="loading">
+    טוען משימות...
+  </div>
+  
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="!isLoading && !errorMessage" class="tasks-list">
+    <app-task-card 
+      *ngFor="let task of tasks" 
+      [task]="task"
+      (taskClick)="viewTask($event)">
+    </app-task-card>
+  </div>
+  
+  <div *ngIf="!isLoading && tasks.length === 0 && !errorMessage" class="no-tasks">
+    אין משימות להצגה
+  </div>
+</div>

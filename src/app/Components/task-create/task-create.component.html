@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="back-button-section">
+    <button (click)="goBack()" class="btn-peach">חזרה למשימות</button>
+  </div>
+
+  <div class="create-card">
+    <h2>{{ isEditMode ? 'עריכת משימה' : 'יצירת משימה חדשה' }}</h2>
+    
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">כותרת המשימה *</label>
+        <input 
+          type="text" 
+          id="title" 
+          formControlName="title"
+          [class.error]="title?.invalid && title?.touched"
+          placeholder="הכנס כותרת למשימה">
+        <div *ngIf="title?.invalid && title?.touched" class="error-message">
+          <span *ngIf="title?.errors?.['required']">כותרת המשימה נדרשת</span>
+          <span *ngIf="title?.errors?.['maxlength']">כותרת המשימה לא יכולה להכיל יותר מ-50 תווים</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">תיאור המשימה *</label>
+        <textarea 
+          id="description" 
+          formControlName="description"
+          [class.error]="description?.invalid && description?.touched"
+          placeholder="הכנס תיאור מפורט למשימה"
+          rows="4">
+        </textarea>
+        <div *ngIf="description?.invalid && description?.touched" class="error-message">
+          <span *ngIf="description?.errors?.['maxlength']">תיאור המשימה לא יכול להכיל יותר מ-500 תווים</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <div class="category-header">
+            <label for="categoryId">קטגוריה *</label>
+            <button type="button" class="btn-add-category" (click)="showAddCategory = !showAddCategory">
+              {{ showAddCategory ? 'ביטול' : '+ הוסף קטגוריה' }}
+            </button>
+          </div>
+          
+          <div *ngIf="showAddCategory" class="add-category-form">
+            <input 
+              type="text" 
+              [(ngModel)]="newCategoryName" 
+              [ngModelOptions]="{standalone: true}"
+              placeholder="שם קטגוריה"
+              class="category-input">
+            <input 
+              type="color" 
+              [(ngModel)]="newCategoryColor" 
+              [ngModelOptions]="{standalone: true}"
+              class="color-picker">
+            <button type="button" class="btn-save-category" (click)="addCategory()">שמור</button>
+          </div>
+          
+          <select id="categoryId" formControlName="categoryId">
+            <option *ngFor="let category of categories" [value]="category.id">
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="priority">עדיפות *</label>
+          <select id="priority" formControlName="priority">
+            <option value="High">גבוהה</option>
+            <option value="Medium">בינונית</option>
+            <option value="Low">נמוכה</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" [disabled]="taskForm.invalid || isLoading">
+          {{ isLoading ? (isEditMode ? 'מעדכן משימה...' : 'יוצר משימה...') : (isEditMode ? 'עדכן משימה' : 'צור משימה') }}
+        </button>
+        <button type="button" class="btn-secondary" (click)="goBack()">ביטול</button>
+      </div>
+    </form>
+  </div>
+</div>
