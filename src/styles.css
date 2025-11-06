@@ -190,6 +190,16 @@ button:disabled {
   margin-top: 0.25rem;
 }
 
+/* RTL Support */
+input[dir="auto"] {
+  text-align: start;
+}
+
+.rtl-support {
+  direction: rtl;
+  text-align: right;
+}
+
 /* Pulse Animation */
 @keyframes pulse {
   0% {

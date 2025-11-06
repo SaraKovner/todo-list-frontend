@@ -26,7 +26,7 @@ export class RegisterComponent {
         Validators.required, 
         Validators.minLength(3), 
         Validators.maxLength(50),
-        Validators.pattern(/^[a-zA-Z0-9_]+$/)
+        Validators.pattern(/^[\p{L}\p{N}_]+$/u)
       ]],
       Email: ['', [
         Validators.required, 
